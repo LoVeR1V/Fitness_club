@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="workouts" class="workouts">
+      <div class="workouts__wrapper">
+      <div *ngIf="workouts.length > 0; else noWorkouts">
+        <div *ngFor="let workout of workouts" class="workouts__item">
+          <div class="workouts__text_wrapper">
+            <p class="workouts__name">{{ workout.workout_name }}</p>
+            <p class="workouts__desc">{{ workout.description }}</p>
+          </div>
+          <div class="workouts__img_wrapper">
+            <img [src]="workout.img_src" alt="Workout Image" class="workouts__img">
+          </div>
+        </div>
+      </div>
+    </div>
+      <ng-template #noWorkouts class="workouts__none">
+        <p>На жаль зараз тренування відсутні.</p>
+      </ng-template>
+  </section>
+</body>
+</html>

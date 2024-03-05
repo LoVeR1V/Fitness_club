@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="coaches" class="coaches">
+      <h2 class="coaches__header">ЗУСТРІЧАЙТЕ НАШИХ ЕКСПЕРТІВ</h2>
+      <div class="coaches__wrapper" *ngIf="coaches.length > 0; else noCoaches">
+        <div *ngFor="let coach of coaches" class="coaches__item">
+          <div class="coaches__image-container">
+            <img class="coaches__image" [src]="coach.img_url" alt="Coach image">
+          </div>
+          <div class="coaches__info">
+            <h2>{{ coach.name }} {{coach.surname}}</h2>
+            <h3>Рейтинг: {{coach.rating}}</h3>
+            <h3>Вартість: {{coach.train_price}} UAH</h3>
+          </div>
+        </div>
+      </div>
+
+      <button routerLink="/coach-schedule/get-all-schedules" class="button get-schedule"
+        ><a>ЗАПИСАТИСЬ</a></button>
+
+      
+      <ng-template #noCoaches class="coaches__none">
+        <h2>No coaches found.</h2>
+      </ng-template>
+  </section>
+</body>
+</html>

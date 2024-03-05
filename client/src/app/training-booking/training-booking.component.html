@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Запис на тренування</title>
+</head>
+<body>
+  <div class="container">
+    <div class="booking-confirm-modal">
+      <h2>ПІДТВЕРДЖЕННЯ</h2>
+      <form [formGroup]="bookForm" (ngSubmit)="submit()">
+        <p class="text">Будь ласка, переконайтеся у коректності наведених даних та підтвердіть вашу готовність брати участь у тренуванні.</p>
+        <p class="text">Приймаючи участь у тренуванні, ви підтверджуєте прийняття наших умов користування та взяти на себе відповідальність за можливі негаразди.</p> 
+        <button type="submit">Підтвердити</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

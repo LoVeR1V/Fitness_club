@@ -1,0 +1,18 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "src/app/buttons.scss";
+
+body {
+  background-color: #F4EEEE;
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+

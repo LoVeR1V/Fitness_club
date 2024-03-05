@@ -1,0 +1,108 @@
+#coach_profile {
+  background-color: #F4EEEE;
+  color: #000000;
+
+  .add_schedule_btn,.submit_btn {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #272727; /* синий */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #2b2c2c;
+    }
+  }
+
+  .container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+
+      label {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        input {
+          width: 70%;
+          border: 1px solid #888;
+          border-radius: 5px;
+          padding: 5px;
+          font-size: 16px;
+        }
+
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          align-self: center;
+        }
+      }
+
+      button[type="submit"], button[type="button"], button[click="addSchedule()"], button[click="submitSchedules()"] {
+        margin-top: 10px;
+        background-color: #b7b9bb;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #9f9f9f;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    form[formGroup="scheduleInfoFormGroup"] {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        border: 1px solid #888;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        input[type="number"], input[type="date"], input[type="time"], input[type="text"], input[type="checkbox"] {
+          width: 60%;
+          border: 1px solid #888;
+          border-radius: 5px;
+          padding: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

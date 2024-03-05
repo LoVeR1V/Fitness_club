@@ -1,0 +1,137 @@
+#user_profile {
+  background-color: #F4EEEE; // ваш текущий цвет фона
+  color: #000000; // ваш текущий цвет текста
+
+  .container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+
+      label {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        input {
+          width: 70%;
+          border: 1px solid #888;
+          border-radius: 5px;
+          padding: 5px;
+          font-size: 16px;
+        }
+
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          align-self: center;
+        }
+      }
+
+      .profile-img-edit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .profile-img-edit input {
+        width: 70%;
+        border: 1px solid #888;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 16px;
+      }
+      
+      .avatar-block {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+      }
+      
+      .avatar-block img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .edit-button, .home_btn {
+        margin-top: 10px; /* отступ сверху */
+        background-color: #b7b9bb; /* ваш текущий фоновый цвет */
+        color: #fff; /* ваш текущий цвет текста */
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+      }  
+      
+    }
+
+    
+
+    .subscription_info, h3 {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .subscription_info__form, .workouts_info__form {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        border: 1px solid #888;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        input[type="number"], input[type="date"], input[type="time"], input[type="text"] {
+          width: 60%;
+          border: 1px solid #888;
+          border-radius: 5px;
+          padding: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .pagination-controls__buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        background-color: #000000;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0c0c0c;
+        }
+      }
+    }
+  }
+}

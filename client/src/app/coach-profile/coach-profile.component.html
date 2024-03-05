@@ -1,0 +1,72 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <section id="coach_profile">
+            <div class="container">
+                <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                    <label>Name:
+                        <input type="text" formControlName="name">
+                    </label>
+                    <label>Surname:
+                        <input type="text" formControlName="surname">
+                    </label>
+                    <label>Email:
+                        <input type="email" formControlName="email">
+                    </label>
+                    <label>Password:
+                        <input type="password" formControlName="password">
+                    </label>
+                    <label>Avatar:
+                        <input type="text" formControlName="img_url">
+                        <img [src]="profileForm.controls['img_url'].value" alt="Avatar"
+                            *ngIf="profileForm.controls['img_url'].value">
+                    </label>
+                    <label>Salary:
+                        <input type="number" formControlName="salary">
+                    </label>
+                    <label>Rating:
+                        <input type="number" formControlName="rating">
+                    </label>
+                    <button (click)="startEditing()" *ngIf="!isEditing">Изменить</button>
+                    <button type="submit" *ngIf="isEditing">Обновить профиль</button>
+                </form>
+
+                <h3>Your Schedule Info:</h3>
+                <form [formGroup]="scheduleInfoFormGroup">
+                    <div formArrayName="schedules">
+                        <div *ngFor="let scheduleForm of scheduleInfoForms.controls; let i=index" [formGroupName]="i">
+                            <label>Date:
+                                <input type="date" formControlName="work_date">
+                            </label>
+                            <label>Час початку зайняття:
+                                <input type="time" formControlName="workPeriod_Start">
+                            </label>
+                            <label>Час кінця зайняття:
+                                <input type="time" formControlName="workPeriod_End">
+                            </label>
+                            <label>Інформація:
+                                <input type="text" formControlName="additional_info">
+                            </label>
+                            <label>Чи є зайнятим:
+                                <input type="checkbox" formControlName="isBooked">
+                            </label>
+                            <button type="button" (click)="updateSchedule(i)">Оновити</button>
+                        </div>
+                    </div>
+                </form>
+                <button type="button" class="add_schedule_btn" (click)="addSchedule()">Додати розпис</button> <br>
+                <button type="button" class="submit_btn" (click)="submitSchedules()">Підтвердити</button> <br>
+                <button class="home_btn" routerLink="/home">На головну</button>
+
+            </div>
+        </section>
+    </body>
+    
+    </html>

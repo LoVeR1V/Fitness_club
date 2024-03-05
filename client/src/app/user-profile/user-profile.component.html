@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="user_profile">
+    <div class="container">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <label>
+          Name:
+          <input type="text" formControlName="name">
+        </label>
+
+        <label>
+          Surname:
+          <input type="text" formControlName="surname">
+        </label>
+
+        <label>
+          Email:
+          <input type="email" formControlName="email">
+        </label>
+
+        <label>
+          Phone:
+          <input type="tel" formControlName="phone">
+        </label>
+
+        <div class="profile-img-edit">
+          <label for="avatar-input">
+            Avatar:
+          </label>
+          <input id="avatar-input" type="text" formControlName="img_src">
+          <div class="avatar-block">
+            <img [src]="profileForm.controls['img_src'].value" alt="Avatar" *ngIf="profileForm.controls['img_src'].value">
+          </div>
+        </div>
+      
+          <button type="submit" *ngIf="isEditing" class="update-button">Оновити профиль</button>
+        <button (click)="startEditing()" *ngIf="!isEditing" class="edit-button">Оновити</button> <br>
+        <button routerLink="/home" class="home-button">На головну</button>
+
+      </form>
+
+      <h3 class="subscription_info"> YOUR SUBSCRIPTION INFO: </h3>
+      <form [formGroup]="subscriptionInfoFormGroup">
+        <div formArrayName="subscriptions" class="subscription_info__form">
+          <div *ngFor="let subscriptionForm of subscriptionInfoForms.controls; let i = index" [formGroupName]="i">
+            <label>
+              Ваша ціна:
+              <input type="number" formControlName="price"> 
+            </label>
+
+            <label>
+              Дата активації:
+              <input type="date" formControlName="start_period"> 
+            </label>
+
+            <label>
+              Закінчення терміну:
+              <input type="date" formControlName="end_period">
+            </label>
+
+            <label>
+              Кількість тренуваннь:
+              <input type="number" formControlName="trains_count">
+            </label>
+
+            <label>
+              Статус підписки:
+              <input type="text" formControlName="status">
+            </label>
+
+            
+          </div>
+        </div>
+      </form>
+
+      <h3> ВАША ІСТОРІЯ ТРЕНУВАНЬ: </h3>
+      <form [formGroup]="workoutHistoriesFormGroup">
+        <div formArrayName="workouts" class="workouts_info__form">
+          <div *ngFor="let workoutHistoriesForms of workoutHistoriesForms.controls; let i = index" [formGroupName]="i">
+            <label>
+              Дата тренування:
+              <input type="date" formControlName="date"> 
+            </label>
+
+            <label>
+              Час початку зайняття:
+              <input type="time" formControlName="start_time"> 
+            </label>
+
+            <label>
+              Час кінця зайняття:
+              <input type="time" formControlName="end_time"> 
+            </label>
+
+            <label>
+              Тренер:
+              <input type="text" formControlName="coach_name"> 
+            </label>
+
+            <label>
+              Тренер:
+              <input type="text" formControlName="coach_surname"> 
+            </label>
+
+            <label>
+              Тренування:
+              <input type="text" formControlName="workout"> 
+            </label>
+
+            <label>
+              Тип тренування:
+              <input type="text" formControlName="workout_type"> 
+            </label>
+          </div>
+        </div>
+      </form>
+      <div class="pagination-controls__buttons">
+        <button (click)="onPreviousPage()">Попередня сторінка</button>
+        <button (click)="onNextPage()">Наступна сторінка</button>
+      </div>
+    </div> 
+  </section>
+</body>
+</html>

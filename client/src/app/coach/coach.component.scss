@@ -1,0 +1,63 @@
+.coaches {
+  background-color: #F4EEEE; 
+
+  
+
+  &__header {
+    text-align: center;
+    margin-top: 134px;
+  }
+
+  &__wrapper {
+    display: flex;
+    margin-top: 100px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    min-width: 250px;
+    max-height: 460px;
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__info h2, h3 {
+    color: #000;
+    text-align: justify;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &__image {
+    max-width: 350px;
+    max-height: 245px;
+    border-radius: 0px 0px 160.5px 160.5px;
+    background: lightgray 50% / cover no-repeat, #D9D9D9;
+  }
+
+  
+  
+}
+
+.get-schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
